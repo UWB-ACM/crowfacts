@@ -7,11 +7,21 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One|Ranchers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"/>
     <noscript>You need to enable JavaScript to use the full functionality of the site.</noscript>
     <script src="main.js"></script>
     <title>Crow Fact Oracle&trade;</title>
   </head>
   <body>
+    <div class="title"><div class="title-photo"></div></div>
+    <div class="container-fluid menu">
+        <div class="row">
+            <div class="col-sm-4 menu-item" onclick="renderPage('getCrows')">Check Out These Crows</div>
+            <div class="col-sm-4 menu-item" onclick="renderPage('getFacts')">Learn Stuff About Them</div>
+            <div class="col-sm-4 menu-item" onclick="renderPage('teachUs')">Share Your Cool Crow Fact</div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,0 +1,30 @@
+.title {
+    height: 200px;
+}
+
+.title-photo {
+    background: url("assets/cribbity_crob.jpg");
+    width: 100%;
+    height: 100%;
+    /* this will look awful, but whatever... */
+    background-size: contain;
+}
+
+.menu {
+    background: lime;
+}
+
+.menu-item {
+    background: magenta;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Ranchers', sans-serif;
+    font-size: 36px;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background: cyan;
+    cursor: pointer;
+}
