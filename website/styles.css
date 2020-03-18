@@ -28,3 +28,23 @@
     background: cyan;
     cursor: pointer;
 }
+
+.content {
+    min-height: 300px;
+}
+
+#getCrows {
+    background: lavenderblush;
+}
+
+#getFacts {
+    background: lemonchiffon;
+}
+
+#teachUs {
+    background: lightcyan;
+}
+
+.hidden {
+    display: none;
+}
