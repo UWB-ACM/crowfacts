@@ -13,8 +13,8 @@ function renderPage(divName, menuItem) {
 
     // change menu item background to reflect current selection
     var menuItems = document.getElementsByClassName('menu-item');
-    for (var i = 0; i < menuItems.length; i++) {
-        menuItems[i].classList.remove('active-task');
-    }
+    Array.from(menuItems).forEach(menuItem => {
+        menuItem.classList.remove('active-task');
+    });
     menuItems[menuItem].classList.add('active-task');
 }
