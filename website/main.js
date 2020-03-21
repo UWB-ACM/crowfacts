@@ -1,11 +1,11 @@
 function renderPage(divName, menuItem) {
     // hide any visible content divs
     var contentDivs = document.getElementsByClassName('content');
-    for (var i = 0; i < contentDivs.length; i++) {
-        if (!contentDivs[i].classList.contains('hidden')) {
-            contentDivs[i].classList.add('hidden');
+    Array.from(contentDivs).forEach(contentDiv => {
+        if (!contentDiv.classList.contains('hidden')) {
+            contentDiv.classList.add('hidden');
         }
-    }
+    });
 
     // make desired div visible
     var target = document.getElementById(divName);
