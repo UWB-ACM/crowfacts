@@ -10,7 +10,10 @@
     <link href="https://fonts.googleapis.com/css?family=Faster+One|Ranchers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"/>
     <noscript>You need to enable JavaScript to use the full functionality of the site.</noscript>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="main.js"></script>
+    <script src="dynamo.js"></script>
+    <script src="populate.js"></script>
     <title>Crow Fact Oracle&trade;</title>
   </head>
   <body>
@@ -24,6 +27,21 @@
     </div>
 
     <div id="getCrows" class="content hidden">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Crow Species Information</h1>
+                    <p>Lorum ipsum stuff things lol</p>
+                </div>
+                <div class="col-md-4">
+                    <form>
+                        <input type="button" value="Get Species Information" onclick="getAllCrowSpecies()">
+                    </form>
+                </div>
+            </div>
+            <div class="row" id="crowFacts">
+            </div>
+        </div>
     </div>
 
     <div id="getFacts" class="content hidden">
@@ -34,7 +52,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
