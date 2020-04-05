@@ -18,7 +18,7 @@ def lambda_handler(event, context):
 	# For a GET method, the incoming parameters need to be the primary/sorting keys of the database.
 	# For a POST method, the incoming parameters need to be the new data you want to add to the database
 	
-	if 'CrowSpecies' in event and 'location' in event:
+	if 'CrowSpecies' in event and 'habitat' in event:
 		# we want to query the table for these specific parameters
 		species = event['CrowSpecies']
 		loc = event['habitat']
