@@ -41,3 +41,7 @@ function getAllCrowSpecies() {
     });
 }
 
+function resetCrowSpeciesData() {
+    localStorage.removeItem("crowFactsSpeciesData");
+    console.log("Storage cleared.");
+}
