@@ -69,3 +69,13 @@
 .crow-text {
     margin-top: 10px;
 }
+
+.centered {
+    text-align: center;
+}
+
+.centered-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
