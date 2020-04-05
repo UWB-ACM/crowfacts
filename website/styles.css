@@ -52,3 +52,20 @@
 .active-task {
     background: orange;
 }
+
+.crow-img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .crow-img {
+        max-height: 100%;
+    }
+}
+
+.crow-text {
+    margin-top: 10px;
+}
