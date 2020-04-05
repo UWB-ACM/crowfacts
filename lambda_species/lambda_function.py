@@ -5,7 +5,7 @@ def lambda_handler(event, context):
 	# Create a connection to the DynamoDB instance of AWS
 	dynamodb = boto3.resource('dynamodb')
 	
-	# Create a connection to the specific table we want from our DynamoDB. In this case, 'CrowFacts'.
+	# Create a connection to the specific table we want from our DynamoDB. In this case, 'CrowFactsTwo'.
 	table = dynamodb.Table('CrowFactsTwo')
 	
 	print(table.table_name, table.table_id, table.item_count, table.key_schema)
