@@ -86,13 +86,16 @@ function displayUserFacts(data) {
 function createFactCard(item) {
     let topLevel = document.getElementById("allFacts");
     let newFact = document.createElement("div");
-    newFact.classList.add("factcard");
+    newFact.classList.add("col-12", "col-sm-4", "col-md-3");
+    let newFactInner = document.createElement("div");
+    newFactInner.classList.add("factcard");
     let factQuote = document.createElement("blockquote");
     factQuote.classList.add("factquote");
     factQuote.innerHTML = item['fact'];
     let factAttribution = document.createElement("p");
     factAttribution.innerHTML = "-- " + item['source'];
-    newFact.appendChild(factQuote);
-    newFact.appendChild(factAttribution);
+    newFactInner.appendChild(factQuote);
+    newFactInner.appendChild(factAttribution);
+    newFact.appendChild(newFactInner);
     topLevel.appendChild(newFact);
 }
