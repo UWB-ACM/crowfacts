@@ -73,7 +73,7 @@ function submitUserFact() {
         },
         error: function (response) {
             alert("Unsuccessful");
-            document.getElementById("putFactRequestStatus").innerHTML = "Your last request was unsuccessful. The error was:\n" + response['body'];
+            document.getElementById("factRequestPlaceholder").innerHTML = "Your last request was unsuccessful. The error was:\n" + response['body'];
         }
     });
 }

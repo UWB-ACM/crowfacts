@@ -59,17 +59,13 @@ function createSpeciesCard(item, index) {
 }
 
 function showSubmittedFactInfo(response, submission) {
-    let responseDiv = document.getElementById("putFactRequestStatus");
+    // add status message to HTML element
     let str = "Your request was successful!";
-    let msg1 = document.createElement("p");
-    msg1.innerHTML = str;
-    responseDiv.appendChild(msg1);
     if (response['body'] && response['body']['Attributes']) {
-        let str2 = "Your input overwrote the input previously added by '" + response['body']['Attributes']['source'] + "', another crow expert.";
-        let msg2 = document.createElement("p");
-        msg2.innerHTML = str2;
-        responseDiv.appendChild(msg1);
+        str += "\nYour input overwrote the input previously added by '" + response['body']['Attributes']['source'] + "', another crow expert.";
     }
+    let msgDiv = document.getElementById("factRequestPlaceholder");
+    msgDiv.innerHTML = str;
 
     // add new submission to lastFactsSubmitted div
     let submittedDiv = document.getElementById("lastFactsSubmitted");
@@ -77,6 +73,8 @@ function showSubmittedFactInfo(response, submission) {
     newSubmission.classList.add("submission");
     newSubmission.innerHTML = submission['fact'];
     submittedDiv.appendChild(newSubmission);
+    let placeholderDiv = document.getElementById("factSubmissionPlaceholder");
+    placeholderDiv.classList.add("hidden");
 }
 
 function displayUserFacts(data) {

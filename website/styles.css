@@ -112,3 +112,20 @@
     padding: 0.5em 10px;
     font-style: italic;
 }
+
+#userFactSubmitter {
+    width: 100%;
+}
+
+#userFactContent {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#putFactRequestStatus {
+    margin-top: 20px;
+}
+
+#lastFactsSubmitted {
+    margin-top: 20px;
+}
