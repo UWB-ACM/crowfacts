@@ -46,6 +46,21 @@
     </div>
 
     <div id="getFacts" class="content hidden">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>See some cool crow facts!</h1>
+                    <p>These facts are sourced from the page creators as well as end-users. 
+                        Use the button below to get the latest and greatest crow facts from 
+                        our DynamoDB table!</p>
+                    <form>
+                        <input type="button" value="Get Facts" onclick="getAllUserFacts()">
+                    </form>
+                </div>
+                <div class="col-12" id="allFacts">
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="teachUs" class="content hidden">

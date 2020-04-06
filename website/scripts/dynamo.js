@@ -77,3 +77,23 @@ function submitUserFact() {
         }
     });
 }
+
+function getAllUserFacts() {
+    // The call which retrieves the DynamoDB data for crow species.
+    $.ajax({
+        type: "GET",
+        url: "https://i9b1mxftnh.execute-api.us-west-2.amazonaws.com/test/UserFacts",
+        dataType: "json",
+        crossDomain: true,
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            // show a success message
+            alert("Success!");
+            // add content to page
+            displayUserFacts(data);
+        },
+        error: function () {
+            alert("Unsuccessful");
+        }
+    });
+}

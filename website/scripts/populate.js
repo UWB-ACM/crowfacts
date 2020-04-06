@@ -78,3 +78,21 @@ function showSubmittedFactInfo(response, submission) {
     newSubmission.innerHTML = submission['fact'];
     submittedDiv.appendChild(newSubmission);
 }
+
+function displayUserFacts(data) {
+    data['body']['Items'].forEach(createFactCard);
+}
+
+function createFactCard(item) {
+    let topLevel = document.getElementById("allFacts");
+    let newFact = document.createElement("div");
+    newFact.classList.add("factcard");
+    let factQuote = document.createElement("blockquote");
+    factQuote.classList.add("factquote");
+    factQuote.innerHTML = item['fact'];
+    let factAttribution = document.createElement("p");
+    factAttribution.innerHTML = "-- " + item['source'];
+    newFact.appendChild(factQuote);
+    newFact.appendChild(factAttribution);
+    topLevel.appendChild(newFact);
+}
