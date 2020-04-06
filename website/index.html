@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One|Ranchers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"/>
+    <noscript>You need to enable JavaScript to use the full functionality of the site.</noscript>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/dynamo.js"></script>
+    <script src="scripts/populate.js"></script>
+    <title>Crow Fact Oracle&trade;</title>
+  </head>
+  <body>
+    <div class="title">
+        <div class="title-photo">
+            <div class="center-banner">
+                <p class="center-banner-text">Crow Facts</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid menu">
+        <div class="row">
+            <div class="col-sm-4 menu-item" onclick="renderPage('getCrows', 0)">Check Out Some Crows</div>
+            <div class="col-sm-4 menu-item" onclick="renderPage('getFacts', 1)">Learn Stuff About Them</div>
+            <div class="col-sm-4 menu-item" onclick="renderPage('teachUs', 2)">Share Your Cool Crow Fact</div>
+        </div>
+    </div>
+
+    <div id="getCrows" class="content hidden">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Crow Species Information</h1>
+                    <p>Lorum ipsum stuff things lol</p>
+                </div>
+                <div class="col-md-4">
+                    <form>
+                        <input type="button" value="Get Species Information" onclick="getAllCrowSpecies()">
+                        <input type="button" value="Reset" onclick="resetCrowSpeciesData()">
+                    </form>
+                </div>
+            </div>
+            <div class="row" id="crowFacts">
+            </div>
+        </div>
+    </div>
+
+    <div id="getFacts" class="content hidden">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>See some cool crow facts!</h1>
+                    <p>These facts are sourced from the page creators as well as end-users. 
+                        Use the button below to get the latest and greatest crow facts from 
+                        our DynamoDB table!</p>
+                    <form>
+                        <input type="button" value="Get Facts" onclick="getAllUserFacts()">
+                    </form>
+                </div>
+            </div>
+            <div class="row" id="allFacts">
+            </div>
+        </div>
+    </div>
+
+    <div id="teachUs" class="content hidden">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Tell us what you know about your crow friends.</h1>
+                    <p>We appreciate any PG-rated insight you may have.</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <form>
+                        <label for="userFactSubmitter">What's your name?</label>
+                        <br />
+                        <input type="text" id="userFactSubmitter">
+                        <br />
+                        <label for="userFactContent">What's your neat fact about the king of the skies?</label>
+                        <br />
+                        <input type="text" id="userFactContent">
+                        <br />
+                        <input type="button" value="Ship It!" onclick="submitUserFact()">
+                    </form>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div id="putFactRequestStatus">
+                        <h3>Last Submit Attempt:</h3>
+                        <p id="factRequestPlaceholder">No information available.</p>
+                    </div>
+                    <div id="lastFactsSubmitted">
+                        <h3>Submitted Facts:</h3>
+                        <p id="factSubmissionPlaceholder">No information available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
