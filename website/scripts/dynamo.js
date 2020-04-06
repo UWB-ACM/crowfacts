@@ -66,7 +66,7 @@ function submitUserFact() {
             // show a success message
             alert("Success!");
             // update page content
-            showSubmittedFactInfo(data, blob);
+            showSubmittedFactInfo(data, JSON.parse(blob));
             // clear form
             document.getElementById("userFactSubmitter").value = "";
             document.getElementById("userFactContent").value = "";
