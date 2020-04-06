@@ -45,3 +45,35 @@ function resetCrowSpeciesData() {
     localStorage.removeItem("crowFactsSpeciesData");
     console.log("Storage cleared.");
 }
+
+function submitUserFact() {
+    // get values in form fields
+    let name = document.getElementById("userFactSubmitter").value;
+    let fact = document.getElementById("userFactContent").value;
+    let blob = { "source": name, "fact": fact };
+    blob = JSON.stringify(blob);
+    // TODO: sanitize info
+    // TODO: ajax call
+    // The call which posts the user's data to DynamoDB.
+    $.ajax({
+        type: "POST",
+        url: "https://i9b1mxftnh.execute-api.us-west-2.amazonaws.com/test/UserFacts",
+        dataType: "json",
+        crossDomain: true,
+        contentType: "application/json; charset=utf-8",
+        data: blob,
+        success: function (data) {
+            // show a success message
+            alert("Success!");
+            // update page content
+            showSubmittedFactInfo(data, blob);
+            // clear form
+            document.getElementById("userFactSubmitter").value = "";
+            document.getElementById("userFactContent").value = "";
+        },
+        error: function (response) {
+            alert("Unsuccessful");
+            document.getElementById("putFactRequestStatus").innerHTML = "Your last request was unsuccessful. The error was:\n" + response['body'];
+        }
+    });
+}

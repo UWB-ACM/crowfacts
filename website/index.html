@@ -49,6 +49,34 @@
     </div>
 
     <div id="teachUs" class="content hidden">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Tell us what you know about your crow friends.</h1>
+                    <p>We appreciate any PG-rated insight you may have.</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <form>
+                        <label for="userFactSubmitter">What's your name?</label>
+                        <br />
+                        <input type="text" id="userFactSubmitter">
+                        <br />
+                        <label for="userFactContent">What's your neat fact about the king of the skies?</label>
+                        <br />
+                        <input type="text" id="userFactContent">
+                        <br />
+                        <input type="button" value="Ship It!" onclick="submitUserFact()">
+                    </form>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div id="putFactRequestStatus">
+                    </div>
+                    <div id="lastFactsSubmitted">
+                        <h3>Submitted Facts:</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->

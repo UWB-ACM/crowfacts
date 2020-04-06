@@ -57,3 +57,24 @@ function createSpeciesCard(item, index) {
     newCard.appendChild(newCardRow);
     topLevel.appendChild(newCard);
 }
+
+function showSubmittedFactInfo(response, submission) {
+    let responseDiv = document.getElementById("putFactRequestStatus");
+    let str = "Your request was successful!";
+    let msg1 = document.createElement("p");
+    msg1.innerHTML = str;
+    responseDiv.appendChild(msg1);
+    if (response['body'] && response['body']['Attributes']) {
+        let str2 = "Your input overwrote the input previously added by '" + response['body']['Attributes']['source'] + "', another crow expert.";
+        let msg2 = document.createElement("p");
+        msg2.innerHTML = str2;
+        responseDiv.appendChild(msg1);
+    }
+
+    // add new submission to lastFactsSubmitted div
+    let submittedDiv = document.getElementById("lastFactsSubmitted");
+    let newSubmission = document.createElement("p");
+    newSubmission.classList.add("submission");
+    newSubmission.innerHTML = submission['fact'];
+    submittedDiv.appendChild(newSubmission);
+}
