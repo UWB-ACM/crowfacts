@@ -1,5 +1,5 @@
 .title {
-    height: 200px;
+    min-height: 200px;
 }
 
 .title-photo {
@@ -8,6 +8,20 @@
     height: 100%;
     /* this will look awful, but whatever... */
     background-size: contain;
+}
+
+.center-banner {
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.center-banner-text {
+    background: none;
+    opacity: 1.0;
+    font-family: "Faster One", serif;
+    color: chartreuse;
+    font-size: 80px;
+    text-align: center;
 }
 
 .menu {
