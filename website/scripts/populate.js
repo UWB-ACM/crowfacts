@@ -89,11 +89,25 @@ function createFactCard(item) {
     newFactInner.classList.add("factcard");
     let factQuote = document.createElement("blockquote");
     factQuote.classList.add("factquote");
-    factQuote.innerHTML = item['fact'];
+    factQuote.innerHTML = escape(item['fact']);
     let factAttribution = document.createElement("p");
-    factAttribution.innerHTML = "-- " + item['source'];
+    console.log('Contents before escaping: ' + item['source']);
+    console.log('Contents after escaping: ' + escape(item['source']));
+    factAttribution.innerHTML = "-- " + escape(item['source']);
     newFactInner.appendChild(factQuote);
     newFactInner.appendChild(factAttribution);
     newFact.appendChild(newFactInner);
     topLevel.appendChild(newFact);
+}
+
+function escape(s) {
+    let lookup = {
+        '&': "&amp;",
+        '"': "&quot;",
+        '<': "&lt;",
+        '>': "&gt;",
+        '/': "&#x2F;",
+        '\'': "&#x27;"
+    };
+    return s.replace( /[&"'\/<>]/g, (c) => lookup[c] );
 }
