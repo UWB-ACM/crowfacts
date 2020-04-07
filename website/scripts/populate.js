@@ -91,6 +91,8 @@ function createFactCard(item) {
     factQuote.classList.add("factquote");
     factQuote.innerHTML = escape(item['fact']);
     let factAttribution = document.createElement("p");
+    console.log('Contents before escaping: ' + item['source']);
+    console.log('Contents after escaping: ' + escape(item['source']));
     factAttribution.innerHTML = "-- " + escape(item['source']);
     newFactInner.appendChild(factQuote);
     newFactInner.appendChild(factAttribution);
@@ -103,7 +105,9 @@ function escape(s) {
         '&': "&amp;",
         '"': "&quot;",
         '<': "&lt;",
-        '>': "&gt;"
+        '>': "&gt;",
+        '/': "&#x2F;",
+        '\'': "&#x27;"
     };
-    return s.replace( /[&"<>]/g, (c) => lookup[c] );
+    return s.replace( /[&"'\/<>]/g, (c) => lookup[c] );
 }
